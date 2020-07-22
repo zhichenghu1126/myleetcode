@@ -3,32 +3,33 @@ package leetcode;
 import java.util.HashMap;
 
 /**
- * ¸ø¶¨ nums = [2, 7, 11, 15], target = 9
+ * ï¿½ï¿½ï¿½ï¿½ nums = [2, 7, 11, 15], target = 9
  * 
- * ÒòÎª nums[0] + nums[1] = 2 + 7 = 9 ËùÒÔ·µ»Ø [0, 1]
+ * ï¿½ï¿½Îª nums[0] + nums[1] = 2 + 7 = 9 ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ [0, 1]
  * 
  * 
  */
 public class Leetcode001 {
 
 	public static void main(String[] args) {
-		int nums[] = { 2, 7, 11, 15 };
-		twoSum(nums, 9);
-
+		int nums[] = { 2, 7, 7, 15 };
+		int[] twoSum = twoSum(nums, 14);
+		for (int i : twoSum) {
+			System.out.println(i);
+		}
 	}
 
 	public static int[] twoSum(int[] nums, int target) {
-
-		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
-		for (int i = 0; i < nums.length; i++) {
-			if (map.containsKey(target - nums[i]) && map.get(target - nums[i]) != i) {
-				System.out.println(i + "," + map.get(target - nums[i]));
-				return new int[] { map.get(target - nums[i]), i };
+		
+		HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
+		for(int i = 0;i<nums.length;i++) {
+			if(map.containsKey(target-nums[i])&&map.get(target-nums[i])!=i) {
+				return new int [] {map.get(target-nums[i]),i};
 			}
-			map.put(nums[i], i);
+			map.put(nums[i],i);
 		}
-
-		return null;
+		throw new RuntimeException("no sum");
+		
 	}
 
 }
