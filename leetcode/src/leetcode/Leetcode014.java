@@ -10,7 +10,7 @@ package leetcode;
 public class Leetcode014 {
 
 	public static void main(String[] args) {
-		String[] strs = { "flower", "flow", "flight" };
+		String[] strs = { "abbb", "cbbbn" };
 		String longestCommonPrefix = longestCommonPrefix(strs);
 		System.out.println(longestCommonPrefix);
 	}
@@ -32,9 +32,11 @@ public class Leetcode014 {
 	public static String longestCommonPrefix(String str1, String str2) {
 		int len = Math.min(str1.length(), str2.length());
 		int index = 0;
-		while (index < len && str1.charAt(index) == str2.charAt(index)) {
-			index++;
-		}
+		for(int i =0;i<len;i++){
+            if(str1.charAt(index)==str2.charAt(index)){
+                index ++;
+            }
+        }
 		return str1.substring(0, index);
 	}
 

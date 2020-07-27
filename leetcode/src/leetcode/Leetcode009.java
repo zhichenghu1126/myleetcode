@@ -16,19 +16,23 @@ public class Leetcode009 {
 	public static boolean isPalindrome(int x) {
 		int a = x;
 		int r = 0;
-		if(x<0) {
+
+		if (x < 0) {
 			return false;
 		}
+
 		while (x != 0) {
 			int pop = x % 10;
 			x = x / 10;
+
 			r = r * 10 + pop;
 		}
-		if (a != r) {
+		if (r != a) {
 			return false;
 		} else {
 			return true;
 		}
+
 	}
 
 }
